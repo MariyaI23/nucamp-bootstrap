@@ -20,6 +20,9 @@
     <header class="jumbotron jumbotron-fluid"> <!--jumbotron-fluid is added so the corners of the background of the header are not rounded but straight-->
         <div class="container">
             <div class="row">
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">   <!--adding this column to hold the image-->
+                    <img src="img\img\logo.png" class="img-fluid" />      <!--img-fluid class adds padding, border and assures that max-width is 100% of the viewport and height is set to auto so it will scale according to the width-->
+                 </div>
                 <div class="col">
             <h1>NuCamp</h1>
             <h2>a better way to camp</h2>
@@ -32,8 +35,10 @@
                     The navbar-dark is added so it will cause the menu items to become lighter against the dark background.Sticky-top will make the navbar still visible on the top while we are scrolling down the page-->
        
         <div class="container">    <!--This is used so padding can be added around the text in the navbar-->
+            
+            <a class="navbar-brand" href="#"><img src="img\img\logo.png" height="30" width="30" /></a>    <!--the img is wrapped as a link because it is common that the website's logo when clicked should take you to the home page-->
 
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
                <span class="navbar-toggler-icon"></span>
            </button>
                 <!--The above code for the button should always be used when we want to create the "hamburger style" button that will hide the navbar and it's
@@ -60,8 +65,13 @@
                 <h2 class="text-sm-right">Discover & Review</h2>   <!--text-sm-right assures that on small and up screens the text will still align to the right-->
             </div>
             <div class="col">
-                <h3>Our Campsites</h3>
-                <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img\img\breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />   <!--d-flex class is there as bootstrap recommends it to deal with a bug in IE10 and up regarding media objects; mr-3 class gives margin-right and the img-thumbnail-gives the img a border-->
+                    <div class="media-body align-self-center">
+                        <h3>Our Campsites</h3>
+                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                    </div>
+                 </div>
             </div>
         </div>
 
@@ -80,8 +90,13 @@
                 <h2 class="text-sm-right">Our Community Partners</h2>
             </div>
             <div class="col">
-                <h3>Bootstrap Outfitters</h3>
-                <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img\img\bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+                    <div class="media-body align-self-center">
+                        <h3>Bootstrap Outfitters</h3>
+                        <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
