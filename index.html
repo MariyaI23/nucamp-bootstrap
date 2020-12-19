@@ -24,9 +24,16 @@
                     <img src="img\img\logo.png" class="img-fluid" />      <!--img-fluid class adds padding, border and assures that max-width is 100% of the viewport and height is set to auto so it will scale according to the width-->
                  </div>
                 <div class="col">
-            <h1>NuCamp</h1>
-            <h2>a better way to camp</h2>
+                    <h1>NuCamp</h1>
+                    <h2>a better way to camp</h2>
                 </div>
+                 <!--Creating a button link in the navbar to take us to the reservation form-->
+                <div class="col col-md-4 col-xl-2 mt-4">
+                        <a href="#reserveForm"class="text-nowrap">         <!--text-nowrap will assure the Reserve and Campsite remain on one line.If we want them to appear one under the other we can ommit this class-->
+                            <button class="btn btn-info btn-lg">Reserve Campsite</button>
+                        </a>
+                </div>
+
             </div>
         </div>
     </header>
@@ -79,11 +86,17 @@
             <div class="col-sm-4 col-md-3">
                 <h2>Featured Campsites</h2>
             </div>
+            <!--Adding React Lake Campground img-thumbnail-->
             <div class="col">
-                <h3>React Lake Campground</h3>
-                <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
-            </div>
-        </div>
+                <div class="media">
+                   <div class="media-body align-self-center">
+                        <h3>React Lake Campground</h3>
+                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                   </div>
+                        <img class="d-flex ml-3 img-thumbnail"  src="img\img\react-lake-thumb.jpg" alt="React Lake"/>     <!--Had to position the img tag after the media-body closing div so the img will appear to the right of the text-->
+                   </div>
+                </div>
+           </div>
 
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
@@ -99,6 +112,43 @@
                 </div>
             </div>
         </div>
+          <!--Creating Reservation Form-->
+         <div class="row row-content align-items-center">
+                 <div class="col-sm-6 mx-auto">    <!--mx-auto is used to horizontally center this div-->
+                     <div class="card">
+                         <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
+                         <div class="card-body">
+                             <form id="reserveForm">
+                                 <div class="form-group row">
+                                     <label class="col-sm-6 col-form-label" for="numCampers">Number of Campers</label>
+                                     <div class="col">
+                                         <select name="numCampers" id="numCampers" class="form-control">
+                                             <option>Select</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                         </select>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                    <div class="col-sm-6">
+                                        <input type="date" id="date" name="date" placeholder="Date" class="form-control"/>
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                 </div>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+         </div>
     </div>
 
     <footer class="site-footer">
