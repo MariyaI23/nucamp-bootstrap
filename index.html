@@ -28,10 +28,11 @@
                     <h2>a better way to camp</h2>
                 </div>
                  <!--Creating a button link in the navbar to take us to the reservation form-->
-                <div class="col col-md-4 col-xl-2 mt-4">
-                        <a href="#reserveForm"class="text-nowrap">         <!--text-nowrap will assure the Reserve and Campsite remain on one line.If we want them to appear one under the other we can ommit this class-->
-                            <button class="btn btn-info btn-lg">Reserve Campsite</button>
-                        </a>
+                <div class="col-md-4 col-xl-2 mt-4">
+                        <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>     <!--the data-placement lets us specify where the tooltip will appear, the title-holds the text inside the tooltip, but if we have HTML tags inside that text they will appear as well, therefore we use data-html="true" to avoid those tags showing up in the tooltip-->
+                        <!--<a href="#reserveForm"class="text-nowrap" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>-->       <!--text-nowrap will assure the Reserve and Campsite remain on one line.If we want them to appear one under the other we can ommit this class-->
+                            <!--<button class="btn btn-info btn-lg">Reserve Campsite</button>
+                        </a>-->
                 </div>
 
             </div>
@@ -181,6 +182,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 
