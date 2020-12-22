@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 col-sm-3 col-md-2 align-self-center">   <!--adding this column to hold the image-->
-                    <img src="img\img\logo.png" class="img-fluid" />      <!--img-fluid class adds padding, border and assures that max-width is 100% of the viewport and height is set to auto so it will scale according to the width-->
+                    <img src="img/logo.png" class="img-fluid" />      <!--img-fluid class adds padding, border and assures that max-width is 100% of the viewport and height is set to auto so it will scale according to the width-->
                  </div>
                 <div class="col">
                     <h1>NuCamp</h1>
@@ -44,7 +44,7 @@
        
         <div class="container">    <!--This is used so padding can be added around the text in the navbar-->
             
-            <a class="navbar-brand" href="#"><img src="img\img\logo.png" height="30" width="30" /></a>    <!--the img is wrapped as a link because it is common that the website's logo when clicked should take you to the home page-->
+            <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>    <!--the img is wrapped as a link because it is common that the website's logo when clicked should take you to the home page-->
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
                <span class="navbar-toggler-icon"></span>
@@ -115,13 +115,60 @@
     </div>
 
     <div class="container">
+        <!--Creating the carousel-->
+        <div class="row row-content">
+            <div class="col-md-8 mx-auto">
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">       <!--the class slide will make the transition bewteen the slides smoother, the data-ride="carousel" will make the carousel start as soon as the page loads-->
+                    <!--Setting up the carousel indicators with the <ol> list-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>       <!--data-slide-to will indicate wich slide the user is currently on. Starts with 0 and goes up-->
+                        <li data-target="#homeCarousel" data-slide-to="1"></li>
+                        <li data-target="#homeCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">       <!--this div container with carousel-inner class will hold the carousel items-->
+                        <div class="carousel-item active">     <!--the active class on this carousel item will make it the first item to show up upon page load-->
+                            <img class="d-block w-100" src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground" />    <!--the d-block and w-100(width-100%) classes are bootstrap's display and sizing utility classes used to prevent the browser from taking over the images and using it's own positioning and sizing-->
+                            <!--Adding captions to each carousel item-->
+                            <div class="carousel-caption">
+                                <h3>Breadcrumb Trail Campground</h3>
+                                <p class="d-none d-sm-block">Let Nucamp be your guide to this off-the-beaten-path, hike-in-only campground.</p>      <!--d-none will make this text invisible on XS viewports; d-sm-block-will make it appear ot viewports sized SM and up-->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/react-lake.jpg" alt="React Lake Campground" />
+                            <div class="carousel-caption">
+                                <h3>React Lake Campground</h3>
+                                <p>Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/chrome-river.jpg" alt="Chrome River Campground" />
+                            <div class="carousel-caption">
+                                <h3>Chrome River Campground</h3>
+                                <p>Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Adding carousel-controls-->
+                    <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="sr-only">Previuous</span>    <!--this is for screan readers only and it will not show up ina the browser-->
+                   </a>
+                   <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="sr-only">Next</span>
+                   </a>
+                </div>
+            </div>
+        </div>
+
         <div class="row row-content align-items-center">  <!--align-items-center class is used on rows and it will center all columns inside a row vertically-->
             <div class="col-sm-4 order-sm-last col-md-3">
                 <h2 class="text-sm-right">Discover & Review</h2>   <!--text-sm-right assures that on small and up screens the text will still align to the right-->
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img\img\breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />   <!--d-flex class is there as bootstrap recommends it to deal with a bug in IE10 and up regarding media objects; mr-3 class gives margin-right and the img-thumbnail-gives the img a border-->
+                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />   <!--d-flex class is there as bootstrap recommends it to deal with a bug in IE10 and up regarding media objects; mr-3 class gives margin-right and the img-thumbnail-gives the img a border-->
                     <div class="media-body align-self-center">
                         <h3>Our Campsites</h3>
                         <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
@@ -141,7 +188,7 @@
                         <h3>React Lake Campground</h3>
                         <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                    </div>
-                        <img class="d-flex ml-3 img-thumbnail"  src="img\img\react-lake-thumb.jpg" alt="React Lake"/>     <!--Had to position the img tag after the media-body closing div so the img will appear to the right of the text-->
+                        <img class="d-flex ml-3 img-thumbnail"  src="img/react-lake-thumb.jpg" alt="React Lake"/>     <!--Had to position the img tag after the media-body closing div so the img will appear to the right of the text-->
                    </div>
                 </div>
            </div>
@@ -152,7 +199,7 @@
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img\img\bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
                     <div class="media-body align-self-center">
                         <h3>Bootstrap Outfitters</h3>
                         <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>

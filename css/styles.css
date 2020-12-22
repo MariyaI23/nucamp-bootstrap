@@ -35,3 +35,9 @@ header h2 {
 .navbar {
     background-color: #901CAD;
 }
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);    /* this style is added so the captions in the carousel are easier to read*/
+}
+.carousel {                                   /*this will give the carousel a border*/
+    border: solid #5637DD;
+}
