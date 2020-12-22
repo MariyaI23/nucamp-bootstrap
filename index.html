@@ -63,9 +63,56 @@
                   <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
                   <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
               </ul>
+
+                 <!--Setting up the button that will open the modal-->
+                 <span class="navbar-text ml-auto">
+                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </span>
+
           </div>
        </div>
     </nav>
+
+    <!--Setting up the modal itself. It can go anywhere in the body. There is no modal HTML tag so we use div tags-->
+    <div id="loginModal" class="modal fade" role="dialog">                    <!--the value of the id matches the value of the data-target attribute of the button that opens the modal; class="fade" gives it a subtle fade effect when it closes or opens-->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>      <!--Here we are creating a little "x" button that can close the login popup/modal. The "&times; is an HTML character entity that represents the little "x"-->
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">   <!--Setting up a container for the form so we can set up rows and cols for a bottstrap grid-->
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>     <!--class="sr-only" makes the label visible to Screen Readers only-->
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email"/>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password"/>
+                                </div>
+                                <div class="col">            <!--Here we'll set up another column for a Remember me box to be checked by the user if she wants the computer to remember the login info-->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox"/>
+                                        <label class="form-check-label">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">         <!--Setting up another form row to hold the Cancel and Submit buttons-->
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row row-content align-items-center">  <!--align-items-center class is used on rows and it will center all columns inside a row vertically-->
