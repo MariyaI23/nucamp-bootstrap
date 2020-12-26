@@ -29,7 +29,11 @@
                 </div>
                  <!--Creating a button link in the navbar to take us to the reservation form-->
                 <div class="col-md-4 col-xl-2 mt-4">
-                        <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>     <!--the data-placement lets us specify where the tooltip will appear, the title-holds the text inside the tooltip, but if we have HTML tags inside that text they will appear as well, therefore we use data-html="true" to avoid those tags showing up in the tooltip-->
+                        <!--Making the Reserve Campsite button to opan a modal-->
+                        <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>   
+
+                        <!--The next line AND the <script> tag at the bottom of the page that deals with tooltips was originally used for creating a tooltip when we hover over the reserve campsite button-->
+                        <!--<a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>-->    <!--the data-placement lets us specify where the tooltip will appear, the title-holds the text inside the tooltip, but if we have HTML tags inside that text they will appear as well, therefore we use data-html="true" to avoid those tags showing up in the tooltip-->
                         <!--<a href="#reserveForm"class="text-nowrap" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>-->       <!--text-nowrap will assure the Reserve and Campsite remain on one line.If we want them to appear one under the other we can ommit this class-->
                             <!--<button class="btn btn-info btn-lg">Reserve Campsite</button>
                         </a>-->
@@ -39,8 +43,67 @@
         </div>
     </header>
 
+    <!--Moving the reservation form from the bottom of the page into the modal-->
+    <div id="reserveModal" class="modal fade" role="dialog">                    
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>      
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">   
+                        <form>
+                            <div class="form-group row">
+                                     <label class="col-sm-6 col-form-label" for="numCampers">Number of Campers</label>
+                                     <div class="col">
+                                         <select name="numCampers" id="numCampers" class="form-control">
+                                             <option>Select</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                         </select>
+                                     </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                    <div class="col-sm-6">
+                                        <input type="date" id="date" name="date" placeholder="Date" class="form-control"/>
+                                    </div>
+                            </div>
+
+                            <!--Creating RV and Tent site buttons-->
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label">Campsite Type</label>
+                                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active" for="siteTent">
+                                        <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked value="Tent">Tent
+                                    </label>
+                                    <label class="btn btn-primary" for="siteRV">
+                                        <input type="radio" name="siteType" id="siteRV" autocomplete="off" value="RV">RV
+                                    </label>
+                               </div>
+                            </div>
+
+                                 <div class="form-group row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                 </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">  <!--First always add navbar and then addl classes-here navbar-expand-sm will expand the navbar horizontally on viewports sizes sm and up but on xs viewports the navbar items will stack on top of one another. 
-                    The navbar-dark is added so it will cause the menu items to become lighter against the dark background.Sticky-top will make the navbar still visible on the top while we are scrolling down the page-->
+                                                                      The navbar-dark is added so it will cause the menu items to become lighter against the dark background.Sticky-top will make the navbar still visible on the top while we are scrolling down the page-->
        
         <div class="container">    <!--This is used so padding can be added around the text in the navbar-->
             
@@ -58,7 +121,7 @@
            <div class="collapse navbar-collapse" id="nucampNavbar">
               <ul class="navbar-nav">    <!--navbar-nav class is added so we can add links to the menu items-->
                   <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>    <!--nav-item should always be added to the <li> items since we will be adding links; 
-                     active is added to indicate that we are currently on the Home page. The <i> tag is used to add the font awesome classes-fa-stands for font awesome, then fa-home gives us the home icon and fa-lg-makes it larger-->
+                                                                                                                                 active is added to indicate that we are currently on the Home page. The <i> tag is used to add the font awesome classes-fa-stands for font awesome, then fa-home gives us the home icon and fa-lg-makes it larger-->
                   <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>  <!--nav-link should always be added the the <a> tags-->
                   <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
                   <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
@@ -208,9 +271,10 @@
             </div>
         </div>
           <!--Creating Reservation Form-->
-         <div class="row row-content align-items-center">
-                 <div class="col-sm-6 mx-auto">    <!--mx-auto is used to horizontally center this div-->
-                     <div class="card">
+          <!--This commented out block of code was used to originally create the Reservation form at the bottom of the page before we moved the form to the modal-->
+    <!--<div class="row row-content align-items-center">
+                 <div class="col-sm-6 mx-auto">-->    <!--mx-auto is used to horizontally center this div-->
+                     <!--<div class="card">
                          <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
                          <div class="card-body">
                              <form id="reserveForm">
@@ -244,7 +308,7 @@
                      </div>
                  </div>
          </div>
-    </div>
+    </div>-->
 
     <footer class="site-footer">
         <div class="container">
@@ -277,11 +341,11 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script>
+    <!--<script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
-    </script>
+    </script>-->
 
 </body>
 
