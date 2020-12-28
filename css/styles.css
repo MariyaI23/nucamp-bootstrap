@@ -41,3 +41,9 @@ header h2 {
 .carousel {                                   /*this will give the carousel a border*/
     border: solid #5637DD;
 }
+#carouselButton {                           /*This styles will position the play/pause buttons of the carousel to the right bottom. Z-index is added so the buttons overlay the carousel and are not hidden behind it*/
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
