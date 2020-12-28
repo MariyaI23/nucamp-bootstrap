@@ -222,14 +222,14 @@
                         <span class="sr-only">Next</span>
                    </a>
                    <!--Adding play/pause buttons to the carousel. We give id attributes to all of them so we can refer to them in CSS and jQuery-->
-                   <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                   <!--<div class="btn-group" id="carouselButton">-->   <!--In reallity only 1 button is needed to pause/play.The other one can be removed-->
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
                             <i class="fa fa-pause"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                        <!--<button class="btn btn-danger btn-sm" id="carouselPlay">
                             <i class="fa fa-play"></i>
-                        </button>
-                   </div>
+                        </button>-->
+                   <!--</div>-->
                 </div>
             </div>
         </div>
@@ -354,7 +354,7 @@
     <!--The first line of the script is a shorthand for $( document).ready(function() { ... }); It specifies that this code should run once the document/page is loaded-->
     <!--The second line of the script changes the interval of time in which the carousel cycles from 5000ms(default) to 2000-->
     <!--The subsequent lines access the elements with the class of carousel and ids of carouselPause and carouselPlay and on click execute the needed function-->
-    <script>
+    <!--<script>
         $(function() {                                   
             $(".carousel").carousel( { interval: 2000 } );
             $("#carouselPause").click(function(){
@@ -362,6 +362,30 @@
             });
             $("#carouselPlay").click(function(){
                 $(".carousel").carousel("cycle");
+            });
+        });
+    </script>-->
+
+    <!--Replacing the above script with the following script with updated jQuery to use on the one remaining play/pause button so it will toggle between play and pause-->
+    <!--The 4th line in the script is checking if the child element of element with id="carouselButton" has a class of fa-pause. If it does, that means the carousel is currently playing-->
+    <!--In the 5th line we can then pause the carousel-->
+    <!--In the 6th line we are removing the child with class of fa-pause(changing the font awesome icon)-->
+    <!--The 7th line we are now adding a child with a class fa-play(changing the font awesome icon)-->
+    <!--Now the else statement block will check if the child has a class of fa-play so we can actually turn the button back from play to pause-->
+    <!--First we need to make the carousel cycle again. Then we remove the child with fa-play class and add one with fa-pause class-->
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
             });
         });
     </script>
