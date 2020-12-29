@@ -366,29 +366,15 @@
         });
     </script>-->
 
-    <!--Replacing the above script with the following script with updated jQuery to use on the one remaining play/pause button so it will toggle between play and pause-->
+    <!--Replacing the above script with the following script with updated jQuery to use on the one remaining play/pause button so it will toggle between play and pause.That script was moved to the scripts.js file.The following is a description of it-->
     <!--The 4th line in the script is checking if the child element of element with id="carouselButton" has a class of fa-pause. If it does, that means the carousel is currently playing-->
     <!--In the 5th line we can then pause the carousel-->
     <!--In the 6th line we are removing the child with class of fa-pause(changing the font awesome icon)-->
     <!--The 7th line we are now adding a child with a class fa-play(changing the font awesome icon)-->
     <!--Now the else statement block will check if the child has a class of fa-play so we can actually turn the button back from play to pause-->
     <!--First we need to make the carousel cycle again. Then we remove the child with fa-play class and add one with fa-pause class-->
-    <script>
-        $(function() {
-            $(".carousel").carousel( { interval: 2000 } );
-            $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
-                    $(".carousel").carousel("pause");
-                    $("#carouselButton").children("i").removeClass("fa-pause");
-                    $("#carouselButton").children("i").addClass("fa-play");
-                } else {
-                    $(".carousel").carousel("cycle");
-                    $("#carouselButton").children("i").removeClass("fa-play");
-                    $("#carouselButton").children("i").addClass("fa-pause"); 
-                }
-            });
-        });
-    </script>
+    
+    <script src="js/scripts.js"> </script>
 
     <!--<script>
         $(function () {

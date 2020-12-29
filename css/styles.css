@@ -6,7 +6,7 @@ h1, h2, h3 {
   font-family: "Lobster", cursive; }
 
 h2 {
-  color: #3046C5; }
+  color: #3046c5; }
 
 header {
   /*This is called nesting in SCss. It helps to show that we are applying this style to h2 children or grand-children of the header element*/ }
@@ -20,7 +20,7 @@ header {
 .jumbotron {
   margin: 0;
   padding: 30px;
-  background-image: linear-gradient(to right, #5637dd, #3046C5, #60106b);
+  background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
   color: white; }
 
 .row-content {
