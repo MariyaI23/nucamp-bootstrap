@@ -4,13 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
+     <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <!-- Additional CSS must be placed after Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
 
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -260,10 +263,10 @@
                         <h3>React Lake Campground</h3>
                         <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                    </div>
-                        <img class="d-flex ml-3 img-thumbnail"  src="img/react-lake-thumb.jpg" alt="React Lake"/>     <!--Had to position the img tag after the media-body closing div so the img will appear to the right of the text-->
-                   </div>
+                    <img class="d-flex ml-3 img-thumbnail"  src="img/react-lake-thumb.jpg" alt="React Lake"/>     <!--Had to position the img tag after the media-body closing div so the img will appear to the right of the text-->
                 </div>
-           </div>
+            </div>
+        </div>
 
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
@@ -316,8 +319,8 @@
                          </div>
                      </div>
                  </div>
-         </div>
-    </div>-->
+         </div>-->
+    </div>
 
     <footer class="site-footer">
         <div class="container">
@@ -345,10 +348,13 @@
             </div>
         </div>
     </footer>
+
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
 
     <!--Adding jQuery script to activate the pause/play buttons of the carousel.-->
     <!--The first line of the script is a shorthand for $( document).ready(function() { ... }); It specifies that this code should run once the document/page is loaded-->
@@ -373,7 +379,7 @@
     <!--The 7th line we are now adding a child with a class fa-play(changing the font awesome icon)-->
     <!--Now the else statement block will check if the child has a class of fa-play so we can actually turn the button back from play to pause-->
     <!--First we need to make the carousel cycle again. Then we remove the child with fa-play class and add one with fa-pause class-->
-    
+
     <script src="js/scripts.js"> </script>
 
     <!--<script>

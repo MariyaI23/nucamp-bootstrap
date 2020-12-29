@@ -1,4 +1,4 @@
-/*These are variables in SCss. We create the variable names. Then use them later in the style whenever we want to apply the value stored in them*/
+
 body {
   font-family: "Open Sans", sans-serif; }
 
@@ -8,10 +8,9 @@ h1, h2, h3 {
 h2 {
   color: #3046c5; }
 
-header {
-  /*This is called nesting in SCss. It helps to show that we are applying this style to h2 children or grand-children of the header element*/ }
   header h2 {
-    color: #CEC8FF; }
+    color: #cec8ff;
+ }
 
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
