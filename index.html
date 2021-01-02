@@ -32,8 +32,12 @@
                 </div>
                  <!--Creating a button link in the navbar to take us to the reservation form-->
                 <div class="col-md-4 col-xl-2 mt-4">
+
                         <!--Making the Reserve Campsite button to opan a modal-->
-                        <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>   
+
+                         <!--TASK 1-in the bellow line remove data-toggle="modal" and data-target="#reserveModal". Replace them with id="reserveButton". Then go to where is said Continue with Task 1-->
+
+                        <a role="button" class="btn btn-lg btn-info" id="reserveButton">Reserve Campsite</a>   
 
                         <!--The next line AND the <script> tag at the bottom of the page that deals with tooltips was originally used for creating a tooltip when we hover over the reserve campsite button-->
                         <!--<a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>-->    <!--the data-placement lets us specify where the tooltip will appear, the title-holds the text inside the tooltip, but if we have HTML tags inside that text they will appear as well, therefore we use data-html="true" to avoid those tags showing up in the tooltip-->
@@ -50,7 +54,8 @@
     <div id="reserveModal" class="modal fade" role="dialog">                    
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-info text-white">
+                 <!--TASK 3-->
+                <div class="modal-header">
                     <h3 class="modal-title">Reserve a Campsite</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>      
                 </div>
@@ -131,8 +136,9 @@
               </ul>
 
                  <!--Setting up the button that will open the modal-->
+                 
                  <span class="navbar-text ml-auto">
-                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                    <a role="button" id="loginButton">
                         <i class="fa fa-sign-in"></i> Login
                     </a>
                 </span>
